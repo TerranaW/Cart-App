@@ -1,4 +1,5 @@
 
+import CartList from './components/cartList';
 import Navbar from './components/navbar';
 
 
@@ -8,6 +9,7 @@ function App() {
     <>
       <div>
         <Navbar />
+        <CartList />
       </div>
     </>
   );
