@@ -1,17 +1,21 @@
 import { useState } from 'react';
-function Counter({ onChange }) {
+
+function Counter({ onChange, onItemCountChange }) {
     const [count, setCount] = useState(0);
 
     const handleIncrement = () => {
-        setCount(count + 1);
-        onChange(count + 1);
-
+        const newCount = count + 1;
+        setCount(newCount);
+        onChange(newCount);
+        onItemCountChange(1);
     };
 
     const handleDecrement = () => {
-        if (count == 0) return;
-        setCount(count - 1);
-        onChange(count - 1);
+        if (count === 0) return;
+        const newCount = count - 1;
+        setCount(newCount);
+        onChange(newCount);
+        onItemCountChange(-1);
     };
 
     return (
