@@ -22,15 +22,19 @@ function CartList({ onItemCountChange }) {
 
     return (
         <div>
-            {items.map((item) => (
-                <CartItem
-                    key={item.id}
-                    title={item.title}
-                    price={item.price}
-                    image={item.image}
-                    onItemCountChange={onItemCountChange}
-                />
-            ))}
+            {items.length == 0 ? <h1>Loading...</h1> :
+                <div>
+                    {items.map((item) => (
+                        <CartItem
+                            key={item.id}
+                            title={item.title}
+                            price={item.price}
+                            image={item.image}
+                            onItemCountChange={onItemCountChange}
+                        />
+                    ))}
+                </div>
+            }
         </div>
     );
 }

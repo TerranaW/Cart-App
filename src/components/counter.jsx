@@ -19,12 +19,23 @@ function Counter({ onChange, onItemCountChange }) {
     };
 
     return (
-        <div>
-            <button onClick={handleDecrement}>-</button>
-            <span>{count}</span>
-            <button onClick={handleIncrement}>+</button>
+        <div className="flex items-center space-x-4 mb-2">
+            <button
+                onClick={handleDecrement}
+                className="bg-white text-black font-bold w-10 h-10 rounded-full border-2 border-yellow-500 hover:bg-yellow-500 transition flex items-center justify-center"
+            >
+                -
+            </button>
+            <span className="text-lg font-semibold">{count}</span>
+            <button
+                onClick={handleIncrement}
+                className="bg-white text-black font-bold w-10 h-10 rounded-full border-2 border-yellow-500 hover:bg-yellow-500 transition flex items-center justify-center"
+            >
+                +
+            </button>
         </div>
     );
+
 }
 
 export default Counter;
